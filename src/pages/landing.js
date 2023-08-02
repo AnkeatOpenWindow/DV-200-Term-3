@@ -37,7 +37,7 @@ function Landing() {
               <img src="https://proadhesive.com/wp-content/themes/storefront-child/images/blog/single/como_poner_vinilo_para_moto-1920.jpg" class="d-block w-100" alt="Wild Landscape" />
               <div class="carousel-caption d-none d-md-block">
                 <h3 style={{marginBottom:'100px', fontSize:'100px'}}>BEST SALE</h3>
-                <p>THE BLACK PHANTOM</p>
+                <p>HONDA</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -75,7 +75,7 @@ function Landing() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 129.99</h5>
+                  <h5 class="card-title">R 129.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -90,7 +90,7 @@ function Landing() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 250.00</h5>
+                  <h5 class="card-title">R 250.00</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -105,7 +105,7 @@ function Landing() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 189.99</h5>
+                  <h5 class="card-title">R 189.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -150,7 +150,7 @@ function Landing() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 129.99</h5>
+                  <h5 class="card-title">R 129.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -165,7 +165,7 @@ function Landing() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 250.00</h5>
+                  <h5 class="card-title">R 250.00</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -180,7 +180,7 @@ function Landing() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 189.99</h5>
+                  <h5 class="card-title">R 189.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -195,7 +195,7 @@ function Landing() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 189.99</h5>
+                  <h5 class="card-title">R 189.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>

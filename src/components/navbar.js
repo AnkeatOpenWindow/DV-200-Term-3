@@ -20,7 +20,7 @@ function Navbar() {
             </button>
   
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent" Style={{ color: '#ffffff' }}>
-              <a class="navbar-brand mx-5 mt-2 mt-lg-0" href="#">
+              <a class="navbar-brand mx-5 mt-2 mt-lg-0" href="/">
                 <img
                   src="https://demo.yolotheme.com/motor/wp-content/uploads/2016/01/logo2-e1467262875150.png"
                   height="50"
@@ -30,26 +30,15 @@ function Navbar() {
               </a>
               <ul class="navbar-nav mx-5 mb-2 mb-lg-0 " >
                 <li style={{marginRight:'30px'}} class="nav-item" >
-                  <a style={{color:'#ED9C14', fontWeight:'bold'}} class="nav-link" href="/">HOME</a>
+                  <a style={{color:'#ED9C14', fontWeight:'bold'}} class="nav-link" href="/">Home</a>
                 </li>
                 <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="/product">PRODUCT</a>
+                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="/product">Product</a>
                 </li>
                 <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="#">SHOP</a>
+                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="/administrator">Administrator</a>
                 </li>
-                <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="#">BLOG</a>
-                </li>
-                <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="#">ABOUT US</a>
-                </li>
-                <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="#">CONTACT</a>
-                </li>
-                <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="#">PAGES</a>
-                </li>
+                
               </ul>
             </div>
   

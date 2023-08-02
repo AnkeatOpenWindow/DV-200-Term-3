@@ -2,7 +2,7 @@ import './App.css';
 import logo from './logo.svg';
 import Landing from './pages/landing';
 import Product from './pages/product';
-import Timeline from './pages/individual';
+import Administrator from './pages/administrator';
 import {Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
@@ -20,6 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing/> }/>
         <Route path='/product' element={<Product/> }/>
+        <Route path='/administrator' element={<Administrator/> }/>
       </Routes>
       <Footer/>
      

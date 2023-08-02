@@ -18,7 +18,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 129.99</h5>
+                  <h5 class="card-title">R 129.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -33,7 +33,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 250.00</h5>
+                  <h5 class="card-title">R 250.00</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -48,7 +48,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 189.99</h5>
+                  <h5 class="card-title">R 189.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -68,7 +68,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 129.99</h5>
+                  <h5 class="card-title">R 129.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -83,7 +83,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 250.00</h5>
+                  <h5 class="card-title">R 250.00</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -98,7 +98,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 189.99</h5>
+                  <h5 class="card-title">R 189.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -118,7 +118,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 129.99</h5>
+                  <h5 class="card-title">R 129.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -133,7 +133,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 250.00</h5>
+                  <h5 class="card-title">R 250.00</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -148,7 +148,7 @@ function Product() {
                   </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">$ 189.99</h5>
+                  <h5 class="card-title">R 189.99</h5>
                   <p class="card-text">View more...</p>
                   <a href="#!" class="btn btn-primary">Buy Now</a>
                 </div>
