@@ -1,5 +1,5 @@
-import * as mdb from 'mdb-react-ui-kit'; // lib
-import { Input } from 'mdb-react-ui-kit'; // module
+import * as mdb from 'mdb-ui-kit'; // lib
+import { Input } from 'mdb-ui-kit'; // module
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
@@ -19,7 +19,7 @@ function Navbar() {
               <i class="fas fa-bars"></i>
             </button>
   
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent" Style={{ color: '#ffffff' }}>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" Style={{ color: '#ffffff' }}>
               <a class="navbar-brand mx-5 mt-2 mt-lg-0" href="/">
                 <img
                   src="https://demo.yolotheme.com/motor/wp-content/uploads/2016/01/logo2-e1467262875150.png"
@@ -41,7 +41,7 @@ function Navbar() {
                 
               </ul>
             </div>
-  
+
             <form class="d-flex input-group w-auto">
               <input
                 type="search"
@@ -50,44 +50,13 @@ function Navbar() {
                 aria-label="Search"
                 aria-describedby="search-addon"
               />
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-              </span>
             </form>
-  
+
             <div class="d-flex align-items-center">
               <a class="text-reset me-3" href="#">
                 <i class="fas fa-shopping-cart"></i>
               </a>
-  
-              <div class="dropdown">
-                <a
-                  class="text-reset me-3 dropdown-toggle hidden-arrow"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-bell"></i>
-                  <span class="badge rounded-pill badge-notification bg-danger"></span>
-                </a>
-                <ul
-                  class="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="#">Some news</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Another news</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="dropdown">
+                <div class="dropdown">
                 <a
                   class="dropdown-toggle d-flex align-items-center hidden-arrow"
                   href="#"
@@ -122,6 +91,8 @@ function Navbar() {
             </div>
           </div>
         </nav>
+
+        
       );
 }
 

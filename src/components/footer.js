@@ -1,5 +1,5 @@
-import * as mdb from 'mdb-react-ui-kit'; // lib
-import { Input } from 'mdb-react-ui-kit'; // module
+import * as mdb from 'mdb-ui-kit'; // lib
+import { Input } from 'mdb-ui-kit'; // module
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 

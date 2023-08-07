@@ -1,5 +1,5 @@
-import * as mdb from 'mdb-react-ui-kit'; // lib
-import { Input } from 'mdb-react-ui-kit'; // module
+import * as mdb from 'mdb-ui-kit'; // lib
+import { Input } from 'mdb-ui-kit'; // module
 import Card from 'react-bootstrap/Card';
 import { Container, Row, Col } from "react-bootstrap";
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -10,60 +10,61 @@ function Landing() {
     return (
       <div className="App">
         <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-mdb-target="#carouselExampleCrossfade"
-              data-mdb-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-mdb-target="#carouselExampleCrossfade"
-              data-mdb-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-mdb-target="#carouselExampleCrossfade"
-              data-mdb-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active" style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="https://proadhesive.com/wp-content/themes/storefront-child/images/blog/single/como_poner_vinilo_para_moto-1920.jpg" class="d-block w-100" alt="Wild Landscape" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3 style={{marginBottom:'100px', fontSize:'100px'}}>BEST SALE</h3>
-                <p>HONDA</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://www.polaris-stormtec.com/fileadmin/templates/model21/features/atv/scr-xp-1000/f0-lg.jpg" class="d-block w-100" alt="Camera" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3 style={{marginBottom:'100px', fontSize:'100px'}}>DUSTERS</h3>
-                <p>THE LEGENDS DRIVE</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://cdn1.polaris.com/globalassets/orv/root/articles/22-what-to-wear/hero-lg.jpg?v=99ac948c&format=webp" class="d-block w-100" alt="Exotic Fruits" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3 style={{marginBottom:'100px', fontSize:'100px'}}>RACERS</h3>
-                <p>THE ULTIMATE MACHINES</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleCrossfade"
+            data-mdb-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleCrossfade"
+            data-mdb-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleCrossfade"
+            data-mdb-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" style={{ display: 'flex', justifyContent: 'center' }}>
+            <img src="https://proadhesive.com/wp-content/themes/storefront-child/images/blog/single/como_poner_vinilo_para_moto-1920.jpg" class="d-block w-100" alt="Wild Landscape" />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 style={{marginBottom:'100px', fontSize:'100px'}}>BEST SALE</h3>
+              <p>HONDA</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.polaris-stormtec.com/fileadmin/templates/model21/features/atv/scr-xp-1000/f0-lg.jpg" class="d-block w-100" alt="Camera" />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 style={{marginBottom:'100px', fontSize:'100px'}}>DUSTERS</h3>
+              <p>THE LEGENDS DRIVE</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn1.polaris.com/globalassets/orv/root/articles/22-what-to-wear/hero-lg.jpg?v=99ac948c&format=webp" class="d-block w-100" alt="Exotic Fruits" />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 style={{marginBottom:'100px', fontSize:'100px'}}>RACERS</h3>
+              <p>THE ULTIMATE MACHINES</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+        
         <div style={{backgroundColor: "#F5F5F5"}}>
           <div class="row" style={{width: "60%", marginLeft: "auto", marginRight: "auto", paddingTop: "50px",  paddingBottom: "50px"}}>
           <div class="col-sm-4">
