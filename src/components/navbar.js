@@ -33,10 +33,10 @@ function Navbar() {
                   <a style={{color:'#ED9C14', fontWeight:'bold'}} class="nav-link" href="/">Home</a>
                 </li>
                 <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="/product">Product</a>
+                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="/">Product</a>
                 </li>
                 <li style={{marginRight:'30px'}} class="nav-item">
-                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="/administrator">Administrator</a>
+                  <a style={{color:'white', fontWeight:'bold'}} class="nav-link" href="/admin">Admin</a>
                 </li>
                 
               </ul>

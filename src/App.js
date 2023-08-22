@@ -1,16 +1,15 @@
 import './App.css';
 import logo from './logo.svg';
-import Landing from './pages/landing';
-import Product from './pages/product';
-import Administrator from './pages/administrator';
+import Landing from './components/pageComponents/landing';
 import {Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-import * as mdb from 'mdb-ui-kit'; // lib
-import { Input } from 'mdb-ui-kit'; // module
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Admin from './components/pageComponents/Admin';
+import ProductPage from './components/pageComponents/ProductPage';
 
 
 function App() {
@@ -19,8 +18,8 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Landing/> }/>
-        <Route path='/product' element={<Product/> }/>
-        <Route path='/administrator' element={<Administrator/> }/>
+        <Route path='/admin' element={<Admin/> }/>
+        <Route path="/productpage" element={<ProductPage/>} />
       </Routes>
       <Footer/>
      
