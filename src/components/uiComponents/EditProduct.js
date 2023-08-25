@@ -4,6 +4,9 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const EditProduct = (props) => {
 
@@ -50,21 +53,46 @@ const closeModal = () =>{
         </Grid>
         <Grid item className='innerModal' xs={4}>
             <h1>Update This Product</h1>
-            <form onSubmit={updateProd}>
-                <TextField required name="name" defaultValue={props.name} label="Product Name" fullWidth margin="dense" onChange={updateValues}/>
-                <TextField required name="price" defaultValue={props.price} label="Product Price" fullWidth margin="dense" onChange={updateValues}/>
-                <TextField required name="description" defaultValue={props.desc} label="Product Description" multiline fullWidth rows={3} margin="dense" onChange={updateValues}/>
-                <TextField required name="varOne" defaultValue={props.varOne} label="In Stock: Green" margin="dense" onChange={updateValues}/>
-                <TextField required name="varTwo" defaultValue={props.varTwo} label="In Stock: Red" margin="dense"  style={{marginLeft: "2.5%", marginTop: "8px", height: "55px"}} onChange={updateValues}/>
-                <TextField required name="varThree" defaultValue={props.varThree} label="In Stock: Blue" margin="dense" onChange={updateValues}/>
-                <Button type="submit" style={{marginLeft: "2.5%", width: "49%", marginTop: "8px", height: "55px"}} variant="contained">Update Product</Button>
-            </form>
-            <Button onClick={closeModal} fullWidth style={{marginTop:"30px"}} variant="outlined">Close Modal</Button>
+            <Form onSubmit={updateProd}>
+              <Form.Group className="mb-3" >
+              <TextField required name="name" defaultValue={props.name} label="Product Name" fullWidth margin="dense" onChange={updateValues}/>
+              </Form.Group>
 
+              <Form.Group className="mb-3" >
+              <TextField required name="price" defaultValue={props.price} label="Product Price" fullWidth margin="dense" onChange={updateValues}/>
+              </Form.Group>
+
+              <Form.Group className="mb-3" >
+              <TextField required name="description" defaultValue={props.desc} label="Product Description" multiline fullWidth rows={3} margin="dense" onChange={updateValues}/>
+              </Form.Group>
+
+              <Row className="mb-3">
+                <Form.Group as={Col} >
+                <TextField required name="varOne" defaultValue={props.varOne} label="In Stock: Black" margin="dense" onChange={updateValues}/>
+                </Form.Group>
+
+                <Form.Group as={Col} >
+                <TextField required name="varTwo" defaultValue={props.varTwo} label="In Stock: Red" margin="dense"  style={{marginLeft: "2.5%", marginTop: "8px", height: "55px"}} onChange={updateValues}/>
+                </Form.Group>
+
+                <Form.Group as={Col} >
+                <TextField required name="varThree" defaultValue={props.varThree} label="In Stock: Blue" margin="dense" onChange={updateValues}/>
+                </Form.Group>
+              </Row>
+
+              <Row className="mb-3">
+                <Form.Group as={Col} >
+                <Button type="submit" fullWidth variant="contained">Update Product</Button>
+                </Form.Group>
+              </Row>
+            </Form>
+            <Button onClick={closeModal} fullWidth style={{marginTop:"30px"}} variant="outlined">Close Modal</Button>
         </Grid>
         <Grid item xs={4}>
         </Grid>
     </Grid>
+
+          
     </div>
   )
 }

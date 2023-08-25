@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Admin from './components/pageComponents/Admin';
+import Productlist from './components/pageComponents/productlist';
 import ProductPage from './components/pageComponents/ProductPage';
 
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing/> }/>
         <Route path='/admin' element={<Admin/> }/>
+        <Route path='/productlist' element={<Productlist/> }/>
         <Route path="/productpage" element={<ProductPage/>} />
       </Routes>
       <Footer/>

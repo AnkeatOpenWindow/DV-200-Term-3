@@ -70,59 +70,11 @@ function Admin() {
   }
 
   return (
-
-    <div className="App">
-        <Row style={{ marginTop: "30px" }}>
-          <Col sm={5} style={{ marginLeft: " 20px" }}>
-            <h1>Add a product</h1>
-            <Form onSubmit={addProduct}>
-              {/* add image here */}
-              <Form.Group className="mb-3" >
-                <TextField required name="name" label="Product Name" fullWidth margin="dense" onChange={getValues} />
-              </Form.Group>
-
-              <Form.Group className="mb-3" >
-                <TextField required name="price" label="Product Price" fullWidth margin="dense" onChange={getValues} />
-              </Form.Group>
-
-              <Form.Group className="mb-3" >
-                <TextField required name="description" label="Product Description" multiline fullWidth rows={3} margin="dense" onChange={getValues} />
-              </Form.Group>
-
-              <Row className="mb-3">
-                <Form.Group as={Col} >
-                  <TextField required name="varOne" label="In Stock: Black" margin="dense" onChange={getValues} />
-                </Form.Group>
-
-                <Form.Group as={Col} >
-                  <TextField required name="varTwo" label="In Stock: Red" margin="dense" onChange={getValues} />
-                </Form.Group>
-                
-                <Form.Group as={Col} >
-                  <TextField required name="varThree" label="In Stock: Blue" margin="dense" onChange={getValues} />
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-1">
-                <Form.Group as={Col} >
-                  <Button type="submit" fullWidth variant="contained">Add New Product</Button>
-                </Form.Group>
-              </Row>
-            </Form>
-          </Col>
-
-          <Col sm={6} style={{ marginLeft: "50px" }}>
-            <Row className="mb-2">
-              <h1>The Motorbike wings: Products</h1>
-              <Grid container spacing={1}>
-                {readProducts}
-              </Grid>
-            </Row>
-          </Col>
-        </Row>
-
-      
-
+    <div className='container' style={{ marginTop: "30px" }}>
+      <h1>The Motorbike wings: Products</h1>
+      <Grid container spacing={1} style={{ marginLeft: "70px",}}>
+        {readProducts}
+      </Grid>
     </div>
   );
 }
