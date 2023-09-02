@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Admin from './components/pageComponents/Admin';
 import Productlist from './components/pageComponents/productlist';
 import ProductPage from './components/pageComponents/ProductPage';
+import ProductPageTwo from './components/pageComponents/ProductPagetwo';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/admin' element={<Admin/> }/>
         <Route path='/productlist' element={<Productlist/> }/>
         <Route path="/productpage" element={<ProductPage/>} />
+        <Route path="/productpagetwo" element={<ProductPageTwo/>} />
       </Routes>
       <Footer/>
      

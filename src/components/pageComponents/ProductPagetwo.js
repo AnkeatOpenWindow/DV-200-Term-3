@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 
 
 //To show single page
-const ProductPage = () => {
+const ProductPageTwo = () => {
 
   let navigate = useNavigate();
 
@@ -29,7 +29,7 @@ const ProductPage = () => {
 
   const backHome = () => {
     sessionStorage.clear();
-    navigate("/admin");
+    navigate("/productlist");
   }
 
   useEffect(() => {
@@ -85,7 +85,8 @@ const ProductPage = () => {
                 </p>
               </Card.Text>
               <Card.Text style={{ textAlign: "left", marginRight: " 5px" }}>
-                <Button onClick={backHome} style={{ marginRight: " 5px" }} variant="outlined" size="small" >Back To Admin</Button>
+                <Button onClick={backHome} style={{ marginRight: " 5px" }} variant="outlined" size="small" >Back To Products</Button>
+                <Button variant="contained" size="small" >Buy</Button>
               </Card.Text>
 
             </Card.Body>
@@ -94,8 +95,10 @@ const ProductPage = () => {
 
 
       </Card>
+
+      
     </div>
   )
 }
 
-export default ProductPage
+export default ProductPageTwo

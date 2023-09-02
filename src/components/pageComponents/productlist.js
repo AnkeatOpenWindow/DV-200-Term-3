@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Axios from 'axios';
-import ProductCard from '../uiComponents/productCard';
+import ProductCardtwo from '../uiComponents/productCardtwo';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -23,7 +23,7 @@ function Admin() {
     Axios.get('http://localhost:5000/api/allproducts')
       .then(res => {
         let data = res.data;
-        const productItem = data.map((item) => <ProductCard key={item._id} productId={item._id} name={item.name} price={item.price} desc={item.description} stock={item.stock} varOne={item.variations.black} varTwo={item.variations.red} varThree={item.variations.blue} editRender={setRenderProducts} />);
+        const productItem = data.map((item) => <ProductCardtwo key={item._id} productId={item._id} name={item.name} price={item.price} desc={item.description} stock={item.stock} varOne={item.variations.black} varTwo={item.variations.red} varThree={item.variations.blue} editRender={setRenderProducts} />);
         setReadProducts(productItem);
         setRenderProducts(false);
       });

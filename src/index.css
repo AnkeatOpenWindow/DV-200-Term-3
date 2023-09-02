@@ -29,3 +29,23 @@ body{
   position: absolute;
   right: 30px;
 }
+
+.imgPrev{
+  width: 100px;
+  height: 100px;
+  left: 450px;
+  border-radius: 5px;
+  overflow: hidden;
+  top: 220px;
+  position: absolute;
+  background-color: #cfcfcf;
+}
+
+.imgPrev img{
+  width: 100px;
+}
+
+.prodImage{
+  width: 200px;
+  height: 200px;
+}
