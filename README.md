@@ -26,13 +26,6 @@ View, Update and delete information of a Product. As well as add a new Product.
 # Concept Process
 ## Ideation
 Creating a website that shows data about Products.
-## Wireframer
-<!-- Images-->
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
 
 # Development Process
 ## Implementation Process
