@@ -34,7 +34,7 @@ const ProductPage = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.reload();
+    window.location = "/";
   };
 
   useEffect(() => {
@@ -87,6 +87,9 @@ const ProductPage = () => {
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/productlist">Products</a>
+              </li>
+              <li style={{ marginRight: '30px' }} class="nav-item">
+                <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/Cart">Cart</a>
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/admin">Admin</a>
@@ -155,6 +158,9 @@ const ProductPage = () => {
               <Card.Title style={{ textAlign: "left" }}>
                 <h2>{productData.productName}</h2>
               </Card.Title>
+              <Card.Text style={{ textAlign: "left" }}>
+                <h3>Price: R {productData.productPrice}</h3>
+              </Card.Text >
               <Card.Text style={{ textAlign: "left" }}>
                 <h5>Available Stock:</h5>
                 <b>{productData.productStock}</b> Units

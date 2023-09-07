@@ -11,7 +11,7 @@ import Admin from './components/pageComponents/Admin';
 import Productlist from './components/pageComponents/productlist';
 import ProductPage from './components/pageComponents/ProductPage';
 import ProductPageTwo from './components/pageComponents/ProductPagetwo';
-import Userinfo from './components/pageComponents/Userinfo';
+import Cart from './components/pageComponents/Cart';
 //import List from './components/pageComponents/List';
 //import Main from './components/Main';
 import Signup from './components/Singup';
@@ -30,13 +30,13 @@ function App() {
         <Route path='/productlist' element={<Productlist />} />
         <Route path="/productpage" element={<ProductPage />} />
         <Route path="/productpagetwo" element={<ProductPageTwo />} />
-        <Route path="/userinfo" element={<Userinfo />} />
+        <Route path="/Cart" element={<Cart />} />
         
         
-        {user && <Route path="/" exact element={<Landing />} />}
+        
         <Route path='/signup' exact element={<Signup />} />
-        <Route path='/login' exact element={<Login />} />
-        <Route path='/' element={<Navigate replace to='/login' />} />
+        <Route path='/' exact element={<Login />} />
+        
       </Routes>
      
 

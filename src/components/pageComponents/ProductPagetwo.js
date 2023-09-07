@@ -15,6 +15,7 @@ const ProductPageTwo = () => {
   let productId = sessionStorage.getItem("productId");
 
   const [imgUrl, setImgUrl] = useState();
+  const [cartItems, setCartItems] = useState([]);
 
   const [productData, setProductData] = useState({
     productName: "",
@@ -34,12 +35,36 @@ const ProductPageTwo = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.reload();
+    window.location = "/";
   };
 
-  const user = () => {
-    sessionStorage.clear();
-    navigate("/userinfo");
+  const addItem = (name, price) => {
+    // Retrieve the existing cart data from localStorage
+    let existingCart = localStorage.getItem('cartItems');
+
+    // Check if existingCart is not null or undefined
+    if (existingCart !== null && existingCart !== undefined) {
+      try {
+        // Parse the existing cart data
+        existingCart = JSON.parse(existingCart);
+      } catch (error) {
+        console.error('Error parsing existing cart data:', error);
+        // If parsing fails, treat it as an empty array
+        existingCart = [];
+      }
+    } else {
+      // If existingCart is null or undefined, initialize it as an empty array
+      existingCart = [];
+    }
+
+    // Add the new item to the cart
+    const updatedItems = [...existingCart, { name, price }];
+
+    // Update the cart in localStorage
+    localStorage.setItem('cartItems', JSON.stringify(updatedItems));
+
+    // Update the cartItems state
+    setCartItems(updatedItems);
   }
 
   useEffect(() => {
@@ -92,6 +117,9 @@ const ProductPageTwo = () => {
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/productlist">Products</a>
+              </li>
+              <li style={{ marginRight: '30px' }} class="nav-item">
+                <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/Cart">Cart</a>
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/admin">Admin</a>
@@ -161,6 +189,9 @@ const ProductPageTwo = () => {
                 <h2>{productData.productName}</h2>
               </Card.Title>
               <Card.Text style={{ textAlign: "left" }}>
+                <h3>Price: R {productData.productPrice}</h3>
+              </Card.Text >
+              <Card.Text style={{ textAlign: "left" }}>
                 <h5>Available Stock:</h5>
                 <b>{productData.productStock}</b> Units
               </Card.Text >
@@ -182,7 +213,7 @@ const ProductPageTwo = () => {
               </Card.Text>
               <Card.Text style={{ textAlign: "left", marginRight: " 5px" }}>
                 <Button onClick={backHome} style={{ marginRight: " 5px" }} variant="outlined" size="small" >Back To Products</Button>
-                <Button variant="contained" onClick={user} size="small" >Buy</Button>
+                <Button variant="contained" onClick={() => addItem(productData.productName, productData.productPrice)} size="small" >Add to cart</Button>
               </Card.Text>
 
             </Card.Body>

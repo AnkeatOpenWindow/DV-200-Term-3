@@ -1,32 +1,91 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Axios from 'axios';
-import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function Userinfo() {
+    const [readOrders, setReadOrders] = useState();
+    const [renderOrders, setrenderOrders] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
+    const [total, setTotal] = useState();
+    const [order, setOrder] = useState({})
+
+    useEffect(() => {
+        // Retrieve cart items from local storage
+        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        setCartItems(storedCartItems);
+    }, []);
+
 
     let navigate = useNavigate();
 
+    const deleteItem = (index) => {
+        if (window.confirm("Are you sure you want to delete this product?")) {
+            // Remove the item at the specified index from cartItems
+            const updatedCartItems = [...cartItems];
+            updatedCartItems.splice(index, 1);
+            setCartItems(updatedCartItems);
+
+            // Update local storage with the new cartItems array
+            localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+
+            const newTotal = updatedCartItems.reduce((acc, item) => acc + item.price, 0);
+            setTotal(newTotal);
+        }
+    }
+
+    useEffect(() => {
+        // Retrieve cart items from local storage
+        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        setCartItems(storedCartItems);
+
+        // Calculate the total price
+        const totalPrice = storedCartItems.reduce((acc, item) => acc + item.price, 0);
+        setTotal(totalPrice);
+    }, []);
 
     const backHome = () => {
         sessionStorage.clear();
         navigate("/productlist");
     }
 
-    const list = () => {
-        sessionStorage.clear();
-        navigate("");
-    }
     const handleLogout = () => {
         localStorage.removeItem("token");
-        window.location.reload();
-      };
+        window.location = "/";
+    };
+
+    const handlePlaceOrder = () => {
+        const token = localStorage.getItem("token");
+
+        if (token) {
+            const ordernumber = Date.now() + token;
+            const payload = {
+                name: localStorage.getItem("username"),
+                order: JSON.parse(localStorage.getItem("cartItems")),
+                price: total,
+                ordernumber: ordernumber
+            };
+
+            Axios.post('http://localhost:5000/api/newOrder', payload)
+                .then((res) => {
+                    if (res) {
+                        console.log("Item Added");
+                        localStorage.removeItem("cartItems");
+
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        } else {
+            // Handle the case when there's no token
+        }
+    };
 
     return (
         <div className="App">
@@ -59,6 +118,9 @@ function Userinfo() {
                             </li>
                             <li style={{ marginRight: '30px' }} class="nav-item">
                                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/productlist">Products</a>
+                            </li>
+                            <li style={{ marginRight: '30px' }} class="nav-item">
+                                <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/Cart">Cart</a>
                             </li>
                             <li style={{ marginRight: '30px' }} class="nav-item">
                                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/admin">Admin</a>
@@ -116,55 +178,67 @@ function Userinfo() {
                     </div>
                 </div>
             </nav>
+
+
             <Row style={{ marginTop: "30px" }}>
-                <Col sm={5} style={{ marginLeft: " auto", marginRight: " auto" }}>
-                    <h1 style={{ marginBottom: " 10px" }}>Your info</h1>
-                    <Form >
-                        <Form.Group className="mb-3" >
-                            <TextField required name="name" label="Name" fullWidth margin="dense" />
-                        </Form.Group>
+                <h1 style={{ marginBottom: " 10px" }}>Cart</h1>
+                <Col sm={12}>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <b>Product name</b>
+                                </th>
+                                <th scope="col">
+                                    <b>Quantity</b>
+                                </th>
+                                <th scope="col">
+                                    <b>Price</b>
+                                </th>
+                                <th scope="col"
+                                ><b>Delete</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {cartItems.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.name}</td>
+                                    <td>1</td>
+                                    <td>R {item.price}</td>
+                                    <td><DeleteForeverIcon onClick={() => deleteItem(index)} /></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </Col>
+                <Col sm={6}>
 
-                        <Form.Group className="mb-3" >
-                            <TextField required name="last name" label="Last name" fullWidth margin="dense" />
-                        </Form.Group>
+                </Col>
+                <Col sm={6}>
+                    <h1>Total: R {total}</h1>
+                </Col>
 
-                        <Form.Group className="mb-3" >
-                            <TextField required name="eamil" label="Email" fullWidth margin="dense" />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" >
-                            <TextField required name="address" label="Address" multiline fullWidth rows={3} margin="dense" />
-                        </Form.Group>
-
-                        <Row className="mb-2">
-                            <Form.Group as={Col} >
-                                <Button onClick={backHome} fullWidth variant="outlined">Cancel</Button>
-                            </Form.Group>
-
-                            <Form.Group as={Col} >
-                                <Button fullWidth variant="contained">Add Product</Button>
-                            </Form.Group>
-                        </Row>
-                    </Form>
+            </Row>
+            <Row>
+                <Col sm={6}>
+                </Col>
+                <Col sm={6} style={{ marginBottom: " 10px" }}>
+                    <Button onClick={backHome} variant="outlined" size="small" style={{ marginRight: " 5px" }} >Cancel</Button>
+                    <Button onClick={handlePlaceOrder} variant="contained" size="small" >Place order</Button>
                 </Col>
             </Row>
 
+
+
+
             <footer class="text-center text-lg-start bg-light text-muted">
-
                 <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-
-
-
-
                 </section>
-
                 <section class="">
                     <div class="container text-center text-md-start mt-5">
-
                         <div class="row mt-3">
-
                             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
                                 <h6 class="text-uppercase fw-bold mb-4">
                                     <i class="fas fa-gem me-3"></i>Motorbike wings
                                 </h6>
@@ -172,9 +246,7 @@ function Userinfo() {
                                     Motorbike wings offer a laugh ranger of motorbike gears.
                                 </p>
                             </div>
-
                             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
                                 <h6 class="text-uppercase fw-bold mb-4">
                                     Products
                                 </h6>
@@ -191,7 +263,6 @@ function Userinfo() {
                                     <a href="#!" class="text-reset">Boots</a>
                                 </p>
                             </div>
-
                             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
                                 <h6 class="text-uppercase fw-bold mb-4">
@@ -210,9 +281,6 @@ function Userinfo() {
                                     <a href="#!" class="text-reset">Help</a>
                                 </p>
                             </div>
-
-
-
                             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
                                 <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
@@ -224,17 +292,13 @@ function Userinfo() {
                                 <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
                                 <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
                             </div>
-
                         </div>
-
                     </div>
                 </section>
-
                 <div class="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
                     © 2021 Copyright:
                     <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
                 </div>
-
             </footer>
         </div>
     );

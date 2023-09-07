@@ -69,7 +69,7 @@ function Admin() {
   }
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.reload();
+    window.location = "/";
   };
   return (
     <div className='App'>
@@ -102,6 +102,9 @@ function Admin() {
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/productlist">Products</a>
+              </li>
+              <li style={{ marginRight: '30px' }} class="nav-item">
+                <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/Cart">Cart</a>
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/admin">Admin</a>

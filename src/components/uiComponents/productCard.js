@@ -55,7 +55,7 @@ const ProductCard = (props) => {
 
 
   return (
-    <Grid item xs={5} style={{marginRight: " 20px", marginBottom: "10px"}}>
+    <Grid item xs={5} style={{ marginRight: " 20px", marginBottom: "10px" }}>
       <Card sx={{ minWidth: 275 }} >
         <CardContent>
           <div className='remove'>
@@ -84,7 +84,7 @@ const ProductCard = (props) => {
       </Card>
       {modalArea}
     </Grid>
-    
+
   )
 }
 

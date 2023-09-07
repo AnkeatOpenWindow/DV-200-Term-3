@@ -28,6 +28,7 @@ function Admin() {
   }, [renderProducts]);
 
 
+
   let defaultFormVals = ["name", "price", "description", "varOne", "varTwo", "varThree"];
 
   const [formValues, setFormValues] = useState(defaultFormVals);
@@ -66,9 +67,10 @@ function Admin() {
   }
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.reload();
+    window.location = "/";
   };
 
+  // add products
   const addProduct = (e) => {
     e.preventDefault();
 
@@ -136,6 +138,9 @@ function Admin() {
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/productlist">Products</a>
+              </li>
+              <li style={{ marginRight: '30px' }} class="nav-item">
+                <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/Cart">Cart</a>
               </li>
               <li style={{ marginRight: '30px' }} class="nav-item">
                 <a style={{ color: 'white', fontWeight: 'bold' }} class="nav-link" href="/admin">Admin</a>
