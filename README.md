@@ -40,7 +40,7 @@ Learning the new code using Mongodb and Mongoose and insure it works without pro
 # Final Outcome
 ## Mockups
 <!-- Images-->
-<img src="images/1" width="100">
+<img src="anke/src/images/1" width="100">
 <img src="images/1" width="100">
 <img src="images/1" width="100">
 <img src="images/1" width="100">
