@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import ProductCardthree from '../uiComponents/productCardthree';
 import Axios from 'axios';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -10,19 +11,22 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function Userinfo() {
     const [readOrders, setReadOrders] = useState();
-    const [renderOrders, setrenderOrders] = useState(false);
+    const [renderOrders, setRenderOrders] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [total, setTotal] = useState();
     const [order, setOrder] = useState({})
 
-    useEffect(() => {
-        // Retrieve cart items from local storage
-        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        setCartItems(storedCartItems);
-    }, []);
-
-
     let navigate = useNavigate();
+
+    useEffect(() => {
+        Axios.get('http://localhost:5000/api/allorders')
+            .then(res => {
+                let data = res.data;
+                const productItem = data.map((item) => <ProductCardthree key={item._id} productId={item._id} name={item.name} price={item.price} order={item.order} ordernumber={item.ordernumber} editRender={setRenderOrders} />);
+                setReadOrders(productItem);
+                setRenderOrders(false);
+            });
+    }, [renderOrders]);
 
     const deleteItem = (index) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
@@ -38,20 +42,9 @@ function Userinfo() {
             setTotal(newTotal);
         }
     }
-
-    useEffect(() => {
-        // Retrieve cart items from local storage
-        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        setCartItems(storedCartItems);
-
-        // Calculate the total price
-        const totalPrice = storedCartItems.reduce((acc, item) => acc + item.price, 0);
-        setTotal(totalPrice);
-    }, []);
-
-    const backHome = () => {
+    const backAdmin = () => {
         sessionStorage.clear();
-        navigate("/productlist");
+        navigate("/admin");
     }
 
     const handleLogout = () => {
@@ -59,33 +52,8 @@ function Userinfo() {
         window.location = "/";
     };
 
-    const handlePlaceOrder = () => {
-        const token = localStorage.getItem("token");
 
-        if (token) {
-            const ordernumber = Date.now() + token;
-            const payload = {
-                name: localStorage.getItem("username"),
-                order: JSON.parse(localStorage.getItem("cartItems")),
-                price: total,
-                ordernumber: ordernumber
-            };
 
-            Axios.post('http://localhost:5000/api/neworders', payload)
-                .then((res) => {
-                    if (res) {
-                        console.log("Item Added");
-                        localStorage.removeItem("cartItems");
-                        alert("Your order has been placed.")
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        } else {
-            // Handle the case when there's no token
-        }
-    };
 
     return (
         <div className="App">
@@ -181,55 +149,17 @@ function Userinfo() {
 
 
             <Row style={{ marginTop: "30px" }}>
-                <h1 style={{ marginBottom: " 10px" }}>Cart</h1>
                 <Col sm={12}>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">
-                                    <b>Product name</b>
-                                </th>
-                                <th scope="col">
-                                    <b>Quantity</b>
-                                </th>
-                                <th scope="col">
-                                    <b>Price</b>
-                                </th>
-                                <th scope="col"
-                                ><b>Delete</b>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {cartItems.map((item, index) => (
-                                <tr key={index}>
-                                    <td>{item.name}</td>
-                                    <td>1</td>
-                                    <td>R {item.price}</td>
-                                    <td><DeleteForeverIcon onClick={() => deleteItem(index)} /></td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <h1 style={{ marginBottom: " 10px" }}>Orders</h1>
+                    {readOrders}
                 </Col>
                 <Col sm={6}>
 
-                </Col>
-                <Col sm={6}>
-                    <h1>Total: R {total}</h1>
-                </Col>
-
-            </Row>
-            <Row>
-                <Col sm={6}>
                 </Col>
                 <Col sm={6} style={{ marginBottom: " 10px" }}>
-                    <Button onClick={backHome} variant="outlined" size="small" style={{ marginRight: " 5px" }} >Cancel</Button>
-                    <Button onClick={handlePlaceOrder} variant="contained" size="small" >Place order</Button>
+                    <Button onClick={backAdmin} variant="contained" size="small" style={{ marginLeft: " 400px" }} >Back to admin</Button>
                 </Col>
             </Row>
-
-
 
 
             <footer class="text-center text-lg-start bg-light text-muted">

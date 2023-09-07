@@ -49,3 +49,13 @@ body{
   width: 200px;
   height: 200px;
 }
+
+
+
+
+.table-cell {
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 200px; 
+}

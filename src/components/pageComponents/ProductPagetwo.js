@@ -39,31 +39,32 @@ const ProductPageTwo = () => {
   };
 
   const addItem = (name, price) => {
-    // Retrieve the existing cart data from localStorage
+    
     let existingCart = localStorage.getItem('cartItems');
 
-    // Check if existingCart is not null or undefined
+    
     if (existingCart !== null && existingCart !== undefined) {
       try {
-        // Parse the existing cart data
         existingCart = JSON.parse(existingCart);
+        
       } catch (error) {
         console.error('Error parsing existing cart data:', error);
-        // If parsing fails, treat it as an empty array
+        
         existingCart = [];
       }
+      alert("Your order has been added to your cart.")
     } else {
-      // If existingCart is null or undefined, initialize it as an empty array
+      
       existingCart = [];
     }
 
-    // Add the new item to the cart
+    
     const updatedItems = [...existingCart, { name, price }];
 
-    // Update the cart in localStorage
+    
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
 
-    // Update the cartItems state
+    
     setCartItems(updatedItems);
   }
 

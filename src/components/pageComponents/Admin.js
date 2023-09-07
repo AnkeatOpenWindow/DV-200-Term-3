@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -16,6 +17,8 @@ function Admin() {
   // Read all the DB Items 
   const [readProducts, setReadProducts] = useState();
   const [renderProducts, setRenderProducts] = useState(false);
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     Axios.get('http://localhost:5000/api/allproducts')
@@ -69,6 +72,11 @@ function Admin() {
     localStorage.removeItem("token");
     window.location = "/";
   };
+
+  const orderpage = () => {
+    sessionStorage.clear();
+    navigate("/orderpage");
+}
 
   // add products
   const addProduct = (e) => {
@@ -241,7 +249,10 @@ function Admin() {
               </Form.Group>
             </Row>
           </Form>
+          <h1 style={{ marginTop: " 50px" }}>Orderpage</h1>
+          <Button onClick={orderpage} variant="contained" size="small">Orders</Button>
         </Col>
+
 
         <Col sm={6} style={{ marginLeft: "50px" }}>
           <Row className="mb-2">

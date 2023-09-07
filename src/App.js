@@ -11,6 +11,7 @@ import Admin from './components/pageComponents/Admin';
 import Productlist from './components/pageComponents/productlist';
 import ProductPage from './components/pageComponents/ProductPage';
 import ProductPageTwo from './components/pageComponents/ProductPagetwo';
+import Orderpage from './components/pageComponents/orderpage';
 import Cart from './components/pageComponents/Cart';
 //import List from './components/pageComponents/List';
 //import Main from './components/Main';
@@ -31,6 +32,7 @@ function App() {
         <Route path="/productpage" element={<ProductPage />} />
         <Route path="/productpagetwo" element={<ProductPageTwo />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path='/orderpage' element={<Orderpage/>}/>
         
         
         
