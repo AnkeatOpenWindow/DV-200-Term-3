@@ -39,17 +39,10 @@ Learning the new code using Mongodb and Mongoose and insure it works without pro
 
 # Final Outcome
 ## Mockups
-<!-- Images-->
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
-<img src="" width="100">
+Mock up in images folder
 
-<!-- Demo video is in the folder named demo_video-->
+## Demo video
+Demo video is in the folder named video
 
 # Conculsion
 Using React, Mongodb and Mongoose I have create and website that shows, edit and delete data in the website which will be shows, edit and delete in the data base I have set up in Mongodb 
