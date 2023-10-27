@@ -17,8 +17,13 @@ E-Commerce or Web Store are the sale of any goods and services facititated throu
 * Mongoose
   
 ## How to install
-In the project directory, you can run:
-### `npm start`
+1. Clone repository.
+2. Open Termianl and cd into anke
+3. Type in npm i then enter
+4. Once all the packages have been installed type npm start
+5. Open second terminal and cd into server
+6. Type in npm i then enter
+7. Once all the packages have been installed type npm run dev
 
 # Features and Functionality
 View, Update and delete information of a Product. As well as add a new Product. 
@@ -39,10 +44,10 @@ Learning the new code using Mongodb and Mongoose and insure it works without pro
 
 # Final Outcome
 ## Mockups
-Mock up in images folder
+https://drive.google.com/drive/folders/1O8fmJZm4qdYQngHeQeNX37zMOprXzwT7?usp=sharing
 
 ## Demo video
-Demo video is in the folder named video
+https://drive.google.com/file/d/1NvaLAGxvcWKawloAj_So85RR5odxriPz/view?usp=sharing
 
 # Conculsion
 Using React, Mongodb and Mongoose I have create and website that shows, edit and delete data in the website which will be shows, edit and delete in the data base I have set up in Mongodb 
